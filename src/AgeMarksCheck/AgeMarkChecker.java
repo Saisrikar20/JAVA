@@ -1,5 +1,7 @@
+package AgeMarksCheck;
+
 import java.util.Scanner;
-public class Main{
+class AgeMarkChecker{
     static void main(String[] args){
         Scanner scan=new Scanner(System.in);
         int age= scan.nextInt();
