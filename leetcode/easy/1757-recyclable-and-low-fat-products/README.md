@@ -57,12 +57,14 @@ Explanation: Only products 1 and 3 are both low fat and recyclable.
 ## Solution
 
 **Language:** SQL  
-**Runtime:** 794 ms (beats 8.98%)  
+**Runtime:** 547 ms (beats 68.43%)  
 **Memory:** 0B (beats 100.00%)  
-**Submitted:** 2026-08-16T12:58:03.137Z  
+**Submitted:** 2026-08-16T13:02:07.518Z  
 
 ```sql
-SELECT product_id FROM Products WHERE low_fats ='Y' and recyclable='Y';
+SELECT product_id 
+FROM Products 
+WHERE low_fats ='Y' and recyclable='Y';
 ```
 
 ---
