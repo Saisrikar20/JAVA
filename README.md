@@ -16,29 +16,25 @@
 
 | Difficulty | Solved |
 |:---:|:---:|
-| 🟢 Easy | **2** |
+| 🟢 Easy | **0** |
 | 🟡 Medium | **7** |
 | 🔴 Hard | **0** |
-| **Total** | **9** |
+| **Total** | **7** |
 
 ## 🛠️ Languages
 
 | Language | Solutions |
 |:---:|:---:|
 | Java | **7** |
-| SQL | **2** |
 
 ## 📂 Repository Structure
 
 ```
 📦 coding-solutions/
-├── leetcode/
-│   ├── easy/
-│   ├── medium/
-│   └── hard/
 ├── hackerrank/
-├── codechef/
-└── gfg/
+    ├── easy/
+    ├── medium/
+    └── hard/
 ```
 
 ---
