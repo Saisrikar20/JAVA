@@ -10,7 +10,11 @@ calculating solution counts (global and per-topic), and updating README.md:
   4. Topics Covered table: per-topic counts
   5. Problem Index: sequentially numbered tables organized by topic with links
 
-Can be run locally or via GitHub Actions CI workflow.
+Features:
+  - Supports both in-place section updates and full recovery if an external tool
+    (e.g., PushMyCode) overwrites README.md with generic template text.
+  - Can be run locally or via GitHub Actions CI workflow.
+
 Usage:
   python scripts/update_readme.py          # Updates README.md in place
   python scripts/update_readme.py --check  # Verifies if README.md is up to date
@@ -23,7 +27,7 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-# Ensure UTF-8 output on all platforms (especially Windows)
+# Ensure UTF-8 output across environments
 if hasattr(sys.stdout, "reconfigure"):
     try:
         sys.stdout.reconfigure(encoding="utf-8")
@@ -215,25 +219,159 @@ def generate_problem_index(problems_by_topic: Dict[str, List[Problem]]) -> str:
     return "\n\n".join(sections)
 
 
+def build_full_readme(problems_by_topic: Dict[str, List[Problem]]) -> str:
+    total_count = sum(len(probs) for probs in problems_by_topic.values())
+    topics_table = generate_topics_table(problems_by_topic)
+    problem_index = generate_problem_index(problems_by_topic)
+
+    ordered_keys = [k for k in TOPIC_CONFIG if k in problems_by_topic]
+    remaining_keys = sorted([k for k in problems_by_topic if k not in TOPIC_CONFIG])
+    topics_names = [
+        TOPIC_CONFIG.get(k, {}).get("display", k.replace("-", " ").title()).split()[0]
+        for k in (ordered_keys + remaining_keys)
+    ]
+    topics_summary = ", ".join(dict.fromkeys(topics_names))
+
+    template = f"""<div align="center">
+
+# ☕ Java — Data Structures & OOP Solutions
+
+![Language](https://img.shields.io/badge/Language-Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Problems Solved](https://img.shields.io/badge/Problems_Solved-{total_count}-blue?style=for-the-badge)
+![Difficulty](https://img.shields.io/badge/Difficulty-Medium-f5a623?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-HackerRank-00EA64?style=for-the-badge&logo=hackerrank&logoColor=white)
+
+A curated collection of **{total_count} medium-difficulty** Java solutions from [HackerRank](https://www.hackerrank.com/), organized by topic. Each solution demonstrates clean code practices, efficient algorithms, and solid object-oriented design.
+
+</div>
+
+---
+
+## 📋 Table of Contents
+
+- [Overview](#-overview)
+- [Topics Covered](#-topics-covered)
+- [Problem Index](#-problem-index)
+- [Repository Structure](#-repository-structure)
+- [How to Run](#-how-to-run)
+- [Contributing](#-contributing)
+
+---
+
+## 🔍 Overview
+
+| Metric | Value |
+|:---|:---|
+| **Platform** | HackerRank |
+| **Language** | Java |
+| **Difficulty** | Medium |
+| **Total Solutions** | {total_count} |
+| **Topics** | {topics_summary} |
+
+---
+
+## 🧩 Topics Covered
+
+{TOPICS_START_MARKER}
+{topics_table}
+{TOPICS_END_MARKER}
+
+> **Note:** Some problems span multiple topics (e.g., a Classes & Objects problem may also use arrays internally).
+
+---
+
+## 📝 Problem Index
+
+{INDEX_START_MARKER}
+{problem_index}
+{INDEX_END_MARKER}
+
+---
+
+## 📂 Repository Structure
+
+```
+JAVA/
+└── hackerrank/
+    └── medium/
+        ├── arrays-1d-*/           # 1D Array problems
+        ├── arrays-2d-*/           # 2D Array / Matrix problems
+        ├── class-and-objects-*/   # OOP & encapsulation problems
+        ├── inheritance-*/         # Inheritance & polymorphism problems
+        ├── recursion-*/           # Recursive algorithm problems
+        └── strings-*/             # String manipulation problems
+```
+
+Each problem directory contains the Java source file(s) with the complete solution.
+
+---
+
+## ▶️ How to Run
+
+**Prerequisites:** Java 8+ (JDK) installed on your system.
+
+```bash
+# Clone the repository
+git clone https://github.com/Saisrikar20/JAVA.git
+cd JAVA
+
+# Navigate to a problem directory
+cd hackerrank/medium/<problem-name>
+
+# Compile and run
+javac Solution.java
+java Solution
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and improvements are welcome! Feel free to:
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/new-solution`)
+3. **Commit** your changes (`git commit -m "Add solution for ..."`)
+4. **Push** to the branch (`git push origin feature/new-solution`)
+5. **Open** a Pull Request
+
+---
+
+<div align="center">
+
+**⭐ If you find these solutions helpful, consider giving this repo a star!**
+
+Made with ☕ and Java
+
+</div>
+"""
+    return template
+
+
 def update_readme_content(original_content: str, problems_by_topic: Dict[str, List[Problem]]) -> str:
     total_count = sum(len(probs) for probs in problems_by_topic.values())
+
+    # If the file has been overwritten by PushMyCode or lacks curated structure, rebuild full template
+    if "# ☕ Java" not in original_content or "## 📝 Problem Index" not in original_content:
+        return build_full_readme(problems_by_topic)
+
     content = original_content
 
-    # 1. Badge: ![Problems Solved](https://img.shields.io/badge/Problems_Solved-34-blue?style=for-the-badge)
+    # 1. Badge
     content = re.sub(
         r"(!\[Problems Solved\]\(https://img\.shields\.io/badge/Problems_Solved-)\d+(-blue\?style=for-the-badge\))",
         rf"\g<1>{total_count}\g<2>",
         content,
     )
 
-    # 2. Intro sentence: A curated collection of **34 medium-difficulty** Java solutions
+    # 2. Intro sentence
     content = re.sub(
         r"(\bcurated collection of \*\*)\d+( medium-difficulty\*\*)",
         rf"\g<1>{total_count}\g<2>",
         content,
     )
 
-    # 3. Overview table: | **Total Solutions** | 34 |
+    # 3. Overview table
     content = re.sub(
         r"(\|\s*\*\*Total Solutions\*\*\s*\|\s*)\d+(\s*\|)",
         rf"\g<1>{total_count}\g<2>",
