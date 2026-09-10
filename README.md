@@ -38,6 +38,7 @@ A curated collection of **34 medium-difficulty** Java solutions from [HackerRank
 
 ## 🧩 Topics Covered
 
+<!-- TOPICS_TABLE_START -->
 | Topic | Count | Key Concepts |
 |:---|:---:|:---|
 | **Arrays (1D)** | 2 | Median finding, filtering |
@@ -46,13 +47,14 @@ A curated collection of **34 medium-difficulty** Java solutions from [HackerRank
 | **Inheritance** | 2 | Class hierarchies, method overriding |
 | **Recursion** | 6 | Divide & conquer, bit counting, validation |
 | **Strings** | 3 | Parsing, reversal, character analysis |
-
+<!-- TOPICS_TABLE_END -->
 > **Note:** Some problems span multiple topics (e.g., a Classes & Objects problem may also use arrays internally).
 
 ---
 
 ## 📝 Problem Index
 
+<!-- PROBLEM_INDEX_START -->
 ### 🔢 Arrays — 1D
 
 | # | Problem | Link |
@@ -70,7 +72,7 @@ A curated collection of **34 medium-difficulty** Java solutions from [HackerRank
 | 6 | Irene's Audience Arrangement Checker | [Solution](hackerrank/medium/arrays-2d-irenes-audience-arrangement-checker) |
 | 7 | Merging Attendance Records | [Solution](hackerrank/medium/arrays-2d-merging-attendance-records) |
 | 8 | Power Grid Monitoring — Computing Diagonal Load Balances | [Solution](hackerrank/medium/arrays-2d-power-grid-monitoring-computing-diagonal-load-balances) |
-| 9 | Robotic Warehouse Navigation — Snake Pattern Traversal | [Solution](hackerrank/medium/arrays-2d-robotic-warehouse-navigation-snake-pattern-traversal) |
+| 9 | Robotic Warehouse Navigation - Snake Pattern Traversal | [Solution](hackerrank/medium/arrays-2d-robotic-warehouse-navigation-snake-pattern-traversal) |
 | 10 | Security Camera Image Processing System | [Solution](hackerrank/medium/arrays-2d-security-camera-image-processing-system) |
 | 11 | Warehouse Inventory Sum Calculation | [Solution](hackerrank/medium/arrays-2d-warehouse-inventory-sum-calculation) |
 | 12 | Warehouse Shelf Max Quantity Finder | [Solution](hackerrank/medium/arrays-2d-warehouse-shelf-max-quantity-finder) |
@@ -116,7 +118,7 @@ A curated collection of **34 medium-difficulty** Java solutions from [HackerRank
 | 32 | Analyzing Sentence Complexity in Content Writing | [Solution](hackerrank/medium/strings-analyzing-sentence-complexity-in-content-writing) |
 | 33 | Character Count | [Solution](hackerrank/medium/strings-character-count-1) |
 | 34 | Reversing Words for a Speech Teleprompter | [Solution](hackerrank/medium/strings-reversing-words-for-a-speech-teleprompter) |
-
+<!-- PROBLEM_INDEX_END -->
 ---
 
 ## 📂 Repository Structure

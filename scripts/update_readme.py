@@ -1,0 +1,334 @@
+#!/usr/bin/env python3
+"""
+scripts/update_readme.py
+
+Automates scanning the repository for HackerRank / Java solutions,
+calculating solution counts (global and per-topic), and updating README.md:
+  1. Header badge: ![Problems Solved](...badge...)
+  2. Intro text: "**X medium-difficulty** Java solutions"
+  3. Overview table: Total Solutions
+  4. Topics Covered table: per-topic counts
+  5. Problem Index: sequentially numbered tables organized by topic with links
+
+Can be run locally or via GitHub Actions CI workflow.
+Usage:
+  python scripts/update_readme.py          # Updates README.md in place
+  python scripts/update_readme.py --check  # Verifies if README.md is up to date
+"""
+
+import argparse
+import os
+import re
+import sys
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+# Ensure UTF-8 output on all platforms (especially Windows)
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+if hasattr(sys.stderr, "reconfigure"):
+    try:
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
+TOPIC_CONFIG: Dict[str, Dict[str, str]] = {
+    "arrays-1d": {
+        "display": "Arrays (1D)",
+        "section_header": "### 🔢 Arrays — 1D",
+        "key_concepts": "Median finding, filtering",
+    },
+    "arrays-2d": {
+        "display": "Arrays (2D)",
+        "section_header": "### 🔢 Arrays — 2D",
+        "key_concepts": "Matrix traversal, rotation, diagonal sums, snake patterns",
+    },
+    "class-and-objects": {
+        "display": "Classes & Objects",
+        "section_header": "### 🏗️ Classes & Objects",
+        "key_concepts": "Encapsulation, state management, domain modeling",
+    },
+    "inheritance": {
+        "display": "Inheritance",
+        "section_header": "### 🧬 Inheritance",
+        "key_concepts": "Class hierarchies, method overriding",
+    },
+    "recursion": {
+        "display": "Recursion",
+        "section_header": "### 🔁 Recursion",
+        "key_concepts": "Divide & conquer, bit counting, validation",
+    },
+    "strings": {
+        "display": "Strings",
+        "section_header": "### 🔤 Strings",
+        "key_concepts": "Parsing, reversal, character analysis",
+    },
+}
+
+TOPICS_START_MARKER = "<!-- TOPICS_TABLE_START -->"
+TOPICS_END_MARKER = "<!-- TOPICS_TABLE_END -->"
+INDEX_START_MARKER = "<!-- PROBLEM_INDEX_START -->"
+INDEX_END_MARKER = "<!-- PROBLEM_INDEX_END -->"
+
+
+class Problem:
+    def __init__(self, topic_key: str, folder_name: str, title: str, rel_path: str):
+        self.topic_key = topic_key
+        self.folder_name = folder_name
+        self.title = title
+        self.rel_path = rel_path.replace("\\", "/")
+
+
+def extract_problem_info(folder_path: Path, repo_root: Path) -> Tuple[str, str]:
+    folder_name = folder_path.name
+    readme_path = folder_path / "README.md"
+
+    fallback_title = folder_name
+    for key in TOPIC_CONFIG:
+        if folder_name.startswith(key + "-"):
+            fallback_title = folder_name[len(key) + 1:].replace("-", " ").title()
+            break
+
+    topic_key = None
+    title = fallback_title
+
+    for key in TOPIC_CONFIG:
+        if folder_name.startswith(key + "-") or folder_name == key:
+            topic_key = key
+            break
+
+    if readme_path.is_file():
+        try:
+            with open(readme_path, "r", encoding="utf-8") as f:
+                first_line = f.readline().strip()
+                match = re.match(r"^#\s*(.*?)\s*[-–—]\s*(.+)$", first_line)
+                if match:
+                    cat_raw = match.group(1).strip().lower()
+                    title = match.group(2).strip()
+
+                    if not topic_key:
+                        if "1d" in cat_raw:
+                            topic_key = "arrays-1d"
+                        elif "2d" in cat_raw:
+                            topic_key = "arrays-2d"
+                        elif "class" in cat_raw:
+                            topic_key = "class-and-objects"
+                        elif "inheritance" in cat_raw:
+                            topic_key = "inheritance"
+                        elif "recursion" in cat_raw:
+                            topic_key = "recursion"
+                        elif "string" in cat_raw:
+                            topic_key = "strings"
+        except Exception:
+            pass
+
+    if folder_name == "strings-character-count-1":
+        title = "Character Count"
+    if folder_name == "arrays-2d-power-grid-monitoring-computing-diagonal-load-balances":
+        title = "Power Grid Monitoring — Computing Diagonal Load Balances"
+
+    if not topic_key:
+        parts = folder_name.split("-")
+        topic_key = parts[0] if parts else "other"
+
+    return topic_key, title
+
+
+def scan_problems(repo_root: Path) -> Dict[str, List[Problem]]:
+    problems_by_topic: Dict[str, List[Problem]] = {}
+
+    search_dirs = [repo_root / "hackerrank"]
+    if not any(d.is_dir() for d in search_dirs):
+        search_dirs = [repo_root]
+
+    for search_dir in search_dirs:
+        for root, dirs, files in os.walk(search_dir):
+            root_path = Path(root)
+            has_java = any(f.lower().endswith(".java") for f in files)
+            has_readme = (root_path / "README.md").is_file() and root_path != repo_root
+
+            if has_java or (has_readme and root_path.parent != repo_root):
+                rel_path = root_path.relative_to(repo_root).as_posix()
+                topic_key, title = extract_problem_info(root_path, repo_root)
+
+                if topic_key not in problems_by_topic:
+                    problems_by_topic[topic_key] = []
+
+                if not any(p.rel_path == rel_path for p in problems_by_topic[topic_key]):
+                    problems_by_topic[topic_key].append(
+                        Problem(topic_key, root_path.name, title, rel_path)
+                    )
+
+    for key in problems_by_topic:
+        problems_by_topic[key].sort(key=lambda p: p.title.lower())
+
+    return problems_by_topic
+
+
+def generate_topics_table(problems_by_topic: Dict[str, List[Problem]]) -> str:
+    rows = [
+        "| Topic | Count | Key Concepts |",
+        "|:---|:---:|:---|",
+    ]
+
+    ordered_keys = [k for k in TOPIC_CONFIG if k in problems_by_topic]
+    remaining_keys = sorted([k for k in problems_by_topic if k not in TOPIC_CONFIG])
+
+    for key in ordered_keys + remaining_keys:
+        cfg = TOPIC_CONFIG.get(key, {
+            "display": key.replace("-", " ").title(),
+            "key_concepts": "Problem solving, algorithms",
+        })
+        count = len(problems_by_topic[key])
+        rows.append(f"| **{cfg['display']}** | {count} | {cfg['key_concepts']} |")
+
+    return "\n".join(rows)
+
+
+def generate_problem_index(problems_by_topic: Dict[str, List[Problem]]) -> str:
+    sections = []
+    current_index = 1
+
+    ordered_keys = [k for k in TOPIC_CONFIG if k in problems_by_topic]
+    remaining_keys = sorted([k for k in problems_by_topic if k not in TOPIC_CONFIG])
+
+    for key in ordered_keys + remaining_keys:
+        cfg = TOPIC_CONFIG.get(key, {
+            "display": key.replace("-", " ").title(),
+            "section_header": f"### 📌 {key.replace('-', ' ').title()}",
+        })
+        section_lines = [
+            cfg["section_header"],
+            "",
+            "| # | Problem | Link |",
+            "|:---:|:---|:---:|",
+        ]
+        for prob in problems_by_topic[key]:
+            section_lines.append(f"| {current_index} | {prob.title} | [Solution]({prob.rel_path}) |")
+            current_index += 1
+
+        sections.append("\n".join(section_lines))
+
+    return "\n\n".join(sections)
+
+
+def update_readme_content(original_content: str, problems_by_topic: Dict[str, List[Problem]]) -> str:
+    total_count = sum(len(probs) for probs in problems_by_topic.values())
+    content = original_content
+
+    # 1. Badge: ![Problems Solved](https://img.shields.io/badge/Problems_Solved-34-blue?style=for-the-badge)
+    content = re.sub(
+        r"(!\[Problems Solved\]\(https://img\.shields\.io/badge/Problems_Solved-)\d+(-blue\?style=for-the-badge\))",
+        rf"\g<1>{total_count}\g<2>",
+        content,
+    )
+
+    # 2. Intro sentence: A curated collection of **34 medium-difficulty** Java solutions
+    content = re.sub(
+        r"(\bcurated collection of \*\*)\d+( medium-difficulty\*\*)",
+        rf"\g<1>{total_count}\g<2>",
+        content,
+    )
+
+    # 3. Overview table: | **Total Solutions** | 34 |
+    content = re.sub(
+        r"(\|\s*\*\*Total Solutions\*\*\s*\|\s*)\d+(\s*\|)",
+        rf"\g<1>{total_count}\g<2>",
+        content,
+    )
+
+    # 4. Topics Covered table
+    new_topics_table = generate_topics_table(problems_by_topic)
+    if TOPICS_START_MARKER in content and TOPICS_END_MARKER in content:
+        pattern = re.escape(TOPICS_START_MARKER) + r".*?" + re.escape(TOPICS_END_MARKER)
+        replacement = f"{TOPICS_START_MARKER}\n{new_topics_table}\n{TOPICS_END_MARKER}"
+        content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+    else:
+        topics_pattern = r"(## 🧩 Topics Covered\s*\n\n)(?:\|[^\n]+\|\n)+(\s*\n> \*\*Note:\*\*)"
+        if re.search(topics_pattern, content):
+            content = re.sub(
+                topics_pattern,
+                rf"\g<1>{TOPICS_START_MARKER}\n{new_topics_table}\n{TOPICS_END_MARKER}\g<2>",
+                content,
+            )
+
+    # 5. Problem Index
+    new_problem_index = generate_problem_index(problems_by_topic)
+    if INDEX_START_MARKER in content and INDEX_END_MARKER in content:
+        pattern = re.escape(INDEX_START_MARKER) + r".*?" + re.escape(INDEX_END_MARKER)
+        replacement = f"{INDEX_START_MARKER}\n{new_problem_index}\n{INDEX_END_MARKER}"
+        content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+    else:
+        index_pattern = r"(## 📝 Problem Index\s*\n\n)(.*?)(\n---\s*\n+## 📂 Repository Structure)"
+        if re.search(index_pattern, content, flags=re.DOTALL):
+            content = re.sub(
+                index_pattern,
+                rf"\g<1>{INDEX_START_MARKER}\n{new_problem_index}\n{INDEX_END_MARKER}\g<3>",
+                content,
+                flags=re.DOTALL,
+            )
+
+    return content
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Update README.md counts and problem index.")
+    parser.add_argument(
+        "--repo-dir",
+        type=Path,
+        default=Path(__file__).resolve().parent.parent,
+        help="Path to repository root (default: parent of scripts/)",
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Check if README.md is up to date without writing changes. Exits with 1 if outdated.",
+    )
+    parser.add_argument(
+        "--write",
+        action="store_true",
+        default=True,
+        help="Write updated contents to README.md (default: True).",
+    )
+    args = parser.parse_args()
+
+    repo_root = args.repo_dir.resolve()
+    readme_path = repo_root / "README.md"
+
+    if not readme_path.is_file():
+        print(f"Error: README.md not found at {readme_path}", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"Scanning repository at: {repo_root}")
+    problems_by_topic = scan_problems(repo_root)
+    total_problems = sum(len(p) for p in problems_by_topic.values())
+    print(f"Discovered {total_problems} problems across {len(problems_by_topic)} topics.")
+
+    for topic_key, probs in problems_by_topic.items():
+        disp = TOPIC_CONFIG.get(topic_key, {}).get("display", topic_key)
+        print(f"  - {disp}: {len(probs)} problems")
+
+    with open(readme_path, "r", encoding="utf-8") as f:
+        original_content = f.read()
+
+    updated_content = update_readme_content(original_content, problems_by_topic)
+
+    if original_content == updated_content:
+        print("README.md is already up to date!")
+        sys.exit(0)
+
+    if args.check:
+        print("README.md is outdated! Run 'python scripts/update_readme.py' to update.", file=sys.stderr)
+        sys.exit(1)
+
+    with open(readme_path, "w", encoding="utf-8") as f:
+        f.write(updated_content)
+
+    print(f"Successfully updated {readme_path} (Total Solutions: {total_problems})")
+
+
+if __name__ == "__main__":
+    main()
