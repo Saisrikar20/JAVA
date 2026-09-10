@@ -127,7 +127,7 @@ Range Per Charge: 240 km
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-10T16:31:10.900Z  
+**Submitted:** 2026-09-10T17:01:43.676Z  
 
 ```java
 import java.util.*;
