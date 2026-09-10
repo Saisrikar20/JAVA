@@ -5,9 +5,9 @@
 ![Language](https://img.shields.io/badge/Language-Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Problems Solved](https://img.shields.io/badge/Problems_Solved-35-blue?style=for-the-badge)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-f5a623?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-HackerRank-00EA64?style=for-the-badge&logo=hackerrank&logoColor=white)
+[![HackerRank](https://img.shields.io/badge/HackerRank-saisrikar_b_2021-00EA64?style=for-the-badge&logo=hackerrank&logoColor=white)](https://www.hackerrank.com/profile/saisrikar_b_2021)
 
-A curated collection of **35 medium-difficulty** Java solutions from [HackerRank](https://www.hackerrank.com/), organized by topic. Each solution demonstrates clean code practices, efficient algorithms, and solid object-oriented design.
+A curated collection of **35 medium-difficulty** Java solutions from [HackerRank](https://www.hackerrank.com/profile/saisrikar_b_2021), organized by topic. Each solution demonstrates clean code practices, efficient algorithms, and solid object-oriented design.
 
 </div>
 
@@ -29,6 +29,7 @@ A curated collection of **35 medium-difficulty** Java solutions from [HackerRank
 | Metric | Value |
 |:---|:---|
 | **Platform** | HackerRank |
+| **Profile** | [@saisrikar_b_2021](https://www.hackerrank.com/profile/saisrikar_b_2021) |
 | **Language** | Java |
 | **Difficulty** | Medium |
 | **Total Solutions** | 35 |

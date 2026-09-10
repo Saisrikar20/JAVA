@@ -9,6 +9,7 @@ calculating solution counts (global and per-topic), and updating README.md:
   3. Overview table: Total Solutions
   4. Topics Covered table: per-topic counts
   5. Problem Index: sequentially numbered tables organized by topic with links
+  6. HackerRank profile integration: @saisrikar_b_2021
 
 Features:
   - Supports both in-place section updates and full recovery if an external tool
@@ -38,6 +39,9 @@ if hasattr(sys.stderr, "reconfigure"):
         sys.stderr.reconfigure(encoding="utf-8")
     except Exception:
         pass
+
+PROFILE_URL = "https://www.hackerrank.com/profile/saisrikar_b_2021"
+PROFILE_HANDLE = "saisrikar_b_2021"
 
 TOPIC_CONFIG: Dict[str, Dict[str, str]] = {
     "arrays-1d": {
@@ -239,9 +243,9 @@ def build_full_readme(problems_by_topic: Dict[str, List[Problem]]) -> str:
 ![Language](https://img.shields.io/badge/Language-Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Problems Solved](https://img.shields.io/badge/Problems_Solved-{total_count}-blue?style=for-the-badge)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-f5a623?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-HackerRank-00EA64?style=for-the-badge&logo=hackerrank&logoColor=white)
+[![HackerRank](https://img.shields.io/badge/HackerRank-{PROFILE_HANDLE}-00EA64?style=for-the-badge&logo=hackerrank&logoColor=white)]({PROFILE_URL})
 
-A curated collection of **{total_count} medium-difficulty** Java solutions from [HackerRank](https://www.hackerrank.com/), organized by topic. Each solution demonstrates clean code practices, efficient algorithms, and solid object-oriented design.
+A curated collection of **{total_count} medium-difficulty** Java solutions from [HackerRank]({PROFILE_URL}), organized by topic. Each solution demonstrates clean code practices, efficient algorithms, and solid object-oriented design.
 
 </div>
 
@@ -263,6 +267,7 @@ A curated collection of **{total_count} medium-difficulty** Java solutions from 
 | Metric | Value |
 |:---|:---|
 | **Platform** | HackerRank |
+| **Profile** | [@{PROFILE_HANDLE}]({PROFILE_URL}) |
 | **Language** | Java |
 | **Difficulty** | Medium |
 | **Total Solutions** | {total_count} |
@@ -341,7 +346,7 @@ Contributions, suggestions, and improvements are welcome! Feel free to:
 
 **⭐ If you find these solutions helpful, consider giving this repo a star!**
 
-Made with ☕ and Java
+Made with ☕ and Java by [@{PROFILE_HANDLE}]({PROFILE_URL})
 
 </div>
 """
@@ -357,28 +362,39 @@ def update_readme_content(original_content: str, problems_by_topic: Dict[str, Li
 
     content = original_content
 
-    # 1. Badge
+    # 1. Update/Add HackerRank profile badge
+    profile_badge = f"[![HackerRank](https://img.shields.io/badge/HackerRank-{PROFILE_HANDLE}-00EA64?style=for-the-badge&logo=hackerrank&logoColor=white)]({PROFILE_URL})"
+    badge_pattern = r"\[?!\[[^\]]*\]\(https://img\.shields\.io/badge/[^)\n]*hackerrank[^)\n]*\)(?:\]\([^)\n]*\))?"
+    content = re.sub(badge_pattern, profile_badge, content)
+
+    # 2. Update badge for problems solved
     content = re.sub(
         r"(!\[Problems Solved\]\(https://img\.shields\.io/badge/Problems_Solved-)\d+(-blue\?style=for-the-badge\))",
         rf"\g<1>{total_count}\g<2>",
         content,
     )
 
-    # 2. Intro sentence
+    # 3. Intro sentence
     content = re.sub(
-        r"(\bcurated collection of \*\*)\d+( medium-difficulty\*\*)",
-        rf"\g<1>{total_count}\g<2>",
+        r"(\bcurated collection of \*\*)\d+( medium-difficulty\*\* Java solutions from )\[HackerRank\]\([^)]*\)",
+        rf"\g<1>{total_count}\g<2>[HackerRank]({PROFILE_URL})",
         content,
     )
 
-    # 3. Overview table
+    # 4. Overview table: Total Solutions & Profile
     content = re.sub(
         r"(\|\s*\*\*Total Solutions\*\*\s*\|\s*)\d+(\s*\|)",
         rf"\g<1>{total_count}\g<2>",
         content,
     )
+    if "| **Profile** |" not in content and "| **Platform** |" in content:
+        content = re.sub(
+            r"(\|\s*\*\*Platform\*\*\s*\|\s*HackerRank\s*\|)",
+            rf"\g<1>\n| **Profile** | [@{PROFILE_HANDLE}]({PROFILE_URL}) |",
+            content,
+        )
 
-    # 4. Topics Covered table
+    # 5. Topics Covered table
     new_topics_table = generate_topics_table(problems_by_topic)
     if TOPICS_START_MARKER in content and TOPICS_END_MARKER in content:
         pattern = re.escape(TOPICS_START_MARKER) + r".*?" + re.escape(TOPICS_END_MARKER)
@@ -393,7 +409,7 @@ def update_readme_content(original_content: str, problems_by_topic: Dict[str, Li
                 content,
             )
 
-    # 5. Problem Index
+    # 6. Problem Index
     new_problem_index = generate_problem_index(problems_by_topic)
     if INDEX_START_MARKER in content and INDEX_END_MARKER in content:
         pattern = re.escape(INDEX_START_MARKER) + r".*?" + re.escape(INDEX_END_MARKER)
@@ -413,7 +429,7 @@ def update_readme_content(original_content: str, problems_by_topic: Dict[str, Li
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Update README.md counts and problem index.")
+    parser = argparse.ArgumentParser(description="Update README.md counts, profile, and problem index.")
     parser.add_argument(
         "--repo-dir",
         type=Path,
