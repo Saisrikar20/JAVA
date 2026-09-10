@@ -41,13 +41,13 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet README.md; then
-            git add README.md
+          if ! git diff --quiet README.md SOLUTIONS.md; then
+            git add README.md SOLUTIONS.md
             git commit -m "docs: update problem count and index in README [skip ci]"
             git pull --rebase origin main
             git push
           else
-            echo "No changes in README.md"
+            echo "No changes in documentation"
           fi
 
       - name: Check README in Pull Requests
