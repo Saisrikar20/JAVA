@@ -260,38 +260,64 @@ def generate_badges(total: int) -> str:
     return " ".join(lines)
 
 
-def generate_stats_table(problems_by_topic: Dict[str, List[Problem]]) -> str:
-    """Generate progress dashboard table with ASCII visual bars."""
-    total = sum(len(probs) for probs in problems_by_topic.values())
+def compute_proportional_percentages(counts: List[int], total: int, decimals: int = 1) -> List[float]:
+    """
+    Computes exact proportional percentages that sum to 100.0%.
+    Uses Hare-Niemeyer (largest remainder) distribution to eliminate rounding drift.
+    """
+    if total == 0:
+        return [0.0] * len(counts)
 
-    def progress_bar(count: int, total_count: int) -> str:
-        if total_count == 0:
-            pct = 0
-        else:
-            pct = int((count / total_count) * 100)
-        filled = int(round(pct / 10))
-        bar = "█" * filled + "░" * (10 - filled)
-        return f"`{bar}` {pct}%"
+    factor = 10 ** decimals
+    raw_shares = [(c / total) * 100 * factor for c in counts]
+    base = [int(s) for s in raw_shares]
+    diff = int(round(100 * factor - sum(base)))
+
+    remainders = [(raw_shares[i] - base[i], i) for i in range(len(counts))]
+    remainders.sort(key=lambda x: x[0], reverse=True)
+
+    for i in range(diff):
+        base[remainders[i][1]] += 1
+
+    return [b / factor for b in base]
+
+
+def generate_stats_table(problems_by_topic: Dict[str, List[Problem]]) -> str:
+    """Generate progress dashboard table with ASCII visual bars guaranteed to sum to 100.0%."""
+    total = sum(len(probs) for probs in problems_by_topic.values())
 
     ordered_keys = [k for k in TOPIC_CONFIG if k in problems_by_topic]
     remaining_keys = sorted([k for k in problems_by_topic if k not in TOPIC_CONFIG])
+    all_keys = ordered_keys + remaining_keys
+
+    counts = [len(problems_by_topic[k]) for k in all_keys]
+    pcts = compute_proportional_percentages(counts, total, decimals=1)
+
+    def progress_bar(pct: float, count: int) -> str:
+        if count == 0:
+            filled = 0
+        else:
+            filled = max(1, int(round(pct / 10)))
+        bar = "█" * filled + "░" * (10 - filled)
+        return f"`{bar}` {pct:.1f}%"
 
     rows = [
         "| Category | Solved | Share of Solutions | Key Concepts |",
         "|:---|:---:|:---|:---|",
     ]
 
-    for key in ordered_keys + remaining_keys:
+    for i, key in enumerate(all_keys):
         cfg = TOPIC_CONFIG.get(key, {
             "display": key.replace("-", " ").title(),
             "icon": "📌",
             "key_concepts": "Problem solving",
         })
-        count = len(problems_by_topic[key])
-        bar_str = progress_bar(count, total)
+        count = counts[i]
+        pct = pcts[i]
+        bar_str = progress_bar(pct, count)
         rows.append(f"| {cfg['icon']} **{cfg['display']}** | **{count}** | {bar_str} | {cfg['key_concepts']} |")
 
-    rows.append(f"| 🎯 **Total** | **{total}** | `██████████` 100% | **All Topics** |")
+    rows.append(f"| 🎯 **Total** | **{total}** | `██████████` 100.0% | **All Topics** |")
     return "\n".join(rows)
 
 

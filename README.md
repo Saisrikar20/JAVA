@@ -24,13 +24,13 @@ This repository automatically tracks and synchronizes my Java programming practi
 <!-- STATS:START -->
 | Category | Solved | Share of Solutions | Key Concepts |
 |:---|:---:|:---|:---|
-| 🔢 **Arrays (1D)** | **2** | `░░░░░░░░░░` 5% | Median finding, filtering |
-| 🔢 **Arrays (2D)** | **10** | `███░░░░░░░` 28% | Matrix traversal, rotation, diagonal sums, snake patterns |
-| 🏗️ **Classes & Objects** | **11** | `███░░░░░░░` 31% | Encapsulation, state management, domain modeling |
-| 🧬 **Inheritance** | **3** | `█░░░░░░░░░` 8% | Class hierarchies, method overriding, multilevel inheritance |
-| 🔁 **Recursion** | **6** | `██░░░░░░░░` 17% | Divide & conquer, bit counting, validation |
-| 🔤 **Strings** | **3** | `█░░░░░░░░░` 8% | Parsing, character frequency, word reversal |
-| 🎯 **Total** | **35** | `██████████` 100% | **All Topics** |
+| 🔢 **Arrays (1D)** | **2** | `█░░░░░░░░░` 5.7% | Median finding, filtering |
+| 🔢 **Arrays (2D)** | **10** | `███░░░░░░░` 28.6% | Matrix traversal, rotation, diagonal sums, snake patterns |
+| 🏗️ **Classes & Objects** | **11** | `███░░░░░░░` 31.4% | Encapsulation, state management, domain modeling |
+| 🧬 **Inheritance** | **3** | `█░░░░░░░░░` 8.6% | Class hierarchies, method overriding, multilevel inheritance |
+| 🔁 **Recursion** | **6** | `██░░░░░░░░` 17.1% | Divide & conquer, bit counting, validation |
+| 🔤 **Strings** | **3** | `█░░░░░░░░░` 8.6% | Parsing, character frequency, word reversal |
+| 🎯 **Total** | **35** | `██████████` 100.0% | **All Topics** |
 <!-- STATS:END -->
 
 ---
