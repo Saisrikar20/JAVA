@@ -1,6 +1,6 @@
 # 📑 Complete Java Solutions Catalog
 
-This catalog lists all **35** HackerRank Java practice solutions synced from HackerRank profile [**@saisrikar_b_2021**](https://www.hackerrank.com/profile/saisrikar_b_2021).
+This catalog lists all **36** HackerRank Java practice solutions synced from HackerRank profile [**@saisrikar_b_2021**](https://www.hackerrank.com/profile/saisrikar_b_2021).
 
 [⬅️ Return to README](./README.md)
 
@@ -31,18 +31,19 @@ This catalog lists all **35** HackerRank Java practice solutions synced from Hac
 | 21 | [Sports Event Venue Management System](./hackerrank/medium/class-and-objects-sports-event-venue-management-system) | [💻 Java](./hackerrank/medium/class-and-objects-sports-event-venue-management-system/solution.java) | **Classes & Objects** | `Venue Information`, `Classes & Objects` |
 | 22 | [Sports Venue Information System](./hackerrank/medium/class-and-objects-sports-venue-information-system) | [💻 Java](./hackerrank/medium/class-and-objects-sports-venue-information-system/solution.java) | **Classes & Objects** | `Venue Information`, `Classes & Objects` |
 | 23 | [Wicket Tracking System](./hackerrank/medium/class-and-objects-wicket-tracking-system) | [💻 Java](./hackerrank/medium/class-and-objects-wicket-tracking-system/solution.java) | **Classes & Objects** | `Wicket Tracker`, `Classes & Objects` |
-| 24 | [Cricket Player Statistics System](./hackerrank/medium/inheritance-cricket-player-statistics-system) | [💻 Java](./hackerrank/medium/inheritance-cricket-player-statistics-system/solution.java) | **Inheritance** | `Domain State Tracking`, `Inheritance` |
-| 25 | [University Student Information System](./hackerrank/medium/inheritance-university-student-information-system) | [💻 Java](./hackerrank/medium/inheritance-university-student-information-system/solution.java) | **Inheritance** | `Class Hierarchies`, `Inheritance` |
-| 26 | [Vehicle Management System](./hackerrank/medium/inheritance-vehicle-management-system) | [💻 Java](./hackerrank/medium/inheritance-vehicle-management-system/solution.java) | **Inheritance** | `Multilevel Inheritance`, `Inheritance` |
-| 27 | [Counting Active Bits in a Device Monitoring System](./hackerrank/medium/recursion-counting-active-bits-in-a-device-monitoring-system) | [💻 Java](./hackerrank/medium/recursion-counting-active-bits-in-a-device-monitoring-system/solution.java) | **Recursion** | `Bit Counting`, `Recursion` |
-| 28 | [Finding the Mighty Element in the Forest](./hackerrank/medium/recursion-finding-the-mighty-element-in-the-forest) | [💻 Java](./hackerrank/medium/recursion-finding-the-mighty-element-in-the-forest/solution.java) | **Recursion** | `Element Search`, `Recursion` |
-| 29 | [Recursive Calculation of Power of 2](./hackerrank/medium/recursion-recursive-calculation-of-power-of-2) | [💻 Java](./hackerrank/medium/recursion-recursive-calculation-of-power-of-2/solution.java) | **Recursion** | `Power Calculation`, `Recursion` |
-| 30 | [Recursive String Length Calculator](./hackerrank/medium/recursion-recursive-string-length-calculator) | [💻 Java](./hackerrank/medium/recursion-recursive-string-length-calculator/solution.java) | **Recursion** | `String Length`, `Recursion` |
-| 31 | [Recursive Sum of Array Elements](./hackerrank/medium/recursion-recursive-sum-of-array-elements) | [💻 Java](./hackerrank/medium/recursion-recursive-sum-of-array-elements/solution.java) | **Recursion** | `Recursive Sum`, `Recursion` |
-| 32 | [Validating Account Numbers](./hackerrank/medium/recursion-validating-account-numbers) | [💻 Java](./hackerrank/medium/recursion-validating-account-numbers/solution.java) | **Recursion** | `Validation Logic`, `Recursion` |
-| 33 | [Analyzing Sentence Complexity in Content Writing](./hackerrank/medium/strings-analyzing-sentence-complexity-in-content-writing) | [💻 Java](./hackerrank/medium/strings-analyzing-sentence-complexity-in-content-writing/solution.java) | **Strings** | `Sentence Analysis`, `Strings` |
-| 34 | [Character Count](./hackerrank/medium/strings-character-count-1) | [💻 Java](./hackerrank/medium/strings-character-count-1/solution.java) | **Strings** | `Character Frequency`, `Strings` |
-| 35 | [Reversing Words for a Speech Teleprompter](./hackerrank/medium/strings-reversing-words-for-a-speech-teleprompter) | [💻 Java](./hackerrank/medium/strings-reversing-words-for-a-speech-teleprompter/solution.java) | **Strings** | `Word Reversal`, `Strings` |
+| 24 | [Bowler Profile Management System](./hackerrank/medium/inheritance-bowler-profile-management-system) | [💻 Java](./hackerrank/medium/inheritance-bowler-profile-management-system/solution.java) | **Inheritance** | `Inheritance` |
+| 25 | [Cricket Player Statistics System](./hackerrank/medium/inheritance-cricket-player-statistics-system) | [💻 Java](./hackerrank/medium/inheritance-cricket-player-statistics-system/solution.java) | **Inheritance** | `Domain State Tracking`, `Inheritance` |
+| 26 | [University Student Information System](./hackerrank/medium/inheritance-university-student-information-system) | [💻 Java](./hackerrank/medium/inheritance-university-student-information-system/solution.java) | **Inheritance** | `Class Hierarchies`, `Inheritance` |
+| 27 | [Vehicle Management System](./hackerrank/medium/inheritance-vehicle-management-system) | [💻 Java](./hackerrank/medium/inheritance-vehicle-management-system/solution.java) | **Inheritance** | `Multilevel Inheritance`, `Inheritance` |
+| 28 | [Counting Active Bits in a Device Monitoring System](./hackerrank/medium/recursion-counting-active-bits-in-a-device-monitoring-system) | [💻 Java](./hackerrank/medium/recursion-counting-active-bits-in-a-device-monitoring-system/solution.java) | **Recursion** | `Bit Counting`, `Recursion` |
+| 29 | [Finding the Mighty Element in the Forest](./hackerrank/medium/recursion-finding-the-mighty-element-in-the-forest) | [💻 Java](./hackerrank/medium/recursion-finding-the-mighty-element-in-the-forest/solution.java) | **Recursion** | `Element Search`, `Recursion` |
+| 30 | [Recursive Calculation of Power of 2](./hackerrank/medium/recursion-recursive-calculation-of-power-of-2) | [💻 Java](./hackerrank/medium/recursion-recursive-calculation-of-power-of-2/solution.java) | **Recursion** | `Power Calculation`, `Recursion` |
+| 31 | [Recursive String Length Calculator](./hackerrank/medium/recursion-recursive-string-length-calculator) | [💻 Java](./hackerrank/medium/recursion-recursive-string-length-calculator/solution.java) | **Recursion** | `String Length`, `Recursion` |
+| 32 | [Recursive Sum of Array Elements](./hackerrank/medium/recursion-recursive-sum-of-array-elements) | [💻 Java](./hackerrank/medium/recursion-recursive-sum-of-array-elements/solution.java) | **Recursion** | `Recursive Sum`, `Recursion` |
+| 33 | [Validating Account Numbers](./hackerrank/medium/recursion-validating-account-numbers) | [💻 Java](./hackerrank/medium/recursion-validating-account-numbers/solution.java) | **Recursion** | `Validation Logic`, `Recursion` |
+| 34 | [Analyzing Sentence Complexity in Content Writing](./hackerrank/medium/strings-analyzing-sentence-complexity-in-content-writing) | [💻 Java](./hackerrank/medium/strings-analyzing-sentence-complexity-in-content-writing/solution.java) | **Strings** | `Sentence Analysis`, `Strings` |
+| 35 | [Character Count](./hackerrank/medium/strings-character-count-1) | [💻 Java](./hackerrank/medium/strings-character-count-1/solution.java) | **Strings** | `Character Frequency`, `Strings` |
+| 36 | [Reversing Words for a Speech Teleprompter](./hackerrank/medium/strings-reversing-words-for-a-speech-teleprompter) | [💻 Java](./hackerrank/medium/strings-reversing-words-for-a-speech-teleprompter/solution.java) | **Strings** | `Word Reversal`, `Strings` |
 
 ---
 <sub>Auto-generated by `scripts/update_readme.py` • Synced from HackerRank: [saisrikar_b_2021](https://www.hackerrank.com/profile/saisrikar_b_2021)</sub>
