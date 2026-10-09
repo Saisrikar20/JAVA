@@ -1,6 +1,6 @@
 # 📑 Complete Java Solutions Catalog
 
-This catalog lists all **51** HackerRank Java practice solutions synced from HackerRank profile [**@saisrikar_b_2021**](https://www.hackerrank.com/profile/saisrikar_b_2021).
+This catalog lists all **52** HackerRank Java practice solutions synced from HackerRank profile [**@saisrikar_b_2021**](https://www.hackerrank.com/profile/saisrikar_b_2021).
 
 [⬅️ Return to README](./README.md)
 
@@ -52,13 +52,14 @@ This catalog lists all **51** HackerRank Java practice solutions synced from Hac
 | 42 | [Vehicle Registration System](./hackerrank/medium/abstraction-vehicle-registration-system) | [💻 Java](./hackerrank/medium/abstraction-vehicle-registration-system/solution.java) | **Abstraction** | `Multilevel Inheritance`, `abstraction` |
 | 43 | [Calculating Daily Profit or Loss Percentage](./hackerrank/medium/decision-making-calculating-daily-profit-or-loss-percentage) | [💻 Java](./hackerrank/medium/decision-making-calculating-daily-profit-or-loss-percentage/solution.java) | **Decision** | `decision` |
 | 44 | [Custom Exception Handling for Age Verification](./hackerrank/medium/exception-handling-custom-exception-handling-for-age-verification) | [💻 Java](./hackerrank/medium/exception-handling-custom-exception-handling-for-age-verification/solution.java) | **Exception** | `exception` |
-| 45 | [String Splitter with Exception Handling](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling) | [💻 Java](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling/solution.java) | **Exception** | `exception` |
-| 46 | [Animal Sound Simulator](./hackerrank/medium/polymorphism-animal-sound-simulator) | [💻 Java](./hackerrank/medium/polymorphism-animal-sound-simulator/solution.java) | **Polymorphism** | `polymorphism` |
-| 47 | [Cricket Match Delivery Tracking System](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
-| 48 | [Cricket Match Tracker](./hackerrank/medium/polymorphism-cricket-match-tracker) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-tracker/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
-| 49 | [Cricket Player Information Hub](./hackerrank/medium/polymorphism-cricket-player-information-hub) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-information-hub/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
-| 50 | [Cricket Player Profile with Role-Specific Details](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
-| 51 | [Restaurant Food Delivery Tracker](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker) | [💻 Java](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker/solution.java) | **Polymorphism** | `polymorphism` |
+| 45 | [Online Quiz Scoring System](./hackerrank/medium/exception-handling-online-quiz-scoring-system) | [💻 Java](./hackerrank/medium/exception-handling-online-quiz-scoring-system/solution.java) | **Exception** | `exception` |
+| 46 | [String Splitter with Exception Handling](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling) | [💻 Java](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling/solution.java) | **Exception** | `exception` |
+| 47 | [Animal Sound Simulator](./hackerrank/medium/polymorphism-animal-sound-simulator) | [💻 Java](./hackerrank/medium/polymorphism-animal-sound-simulator/solution.java) | **Polymorphism** | `polymorphism` |
+| 48 | [Cricket Match Delivery Tracking System](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
+| 49 | [Cricket Match Tracker](./hackerrank/medium/polymorphism-cricket-match-tracker) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-tracker/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
+| 50 | [Cricket Player Information Hub](./hackerrank/medium/polymorphism-cricket-player-information-hub) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-information-hub/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
+| 51 | [Cricket Player Profile with Role-Specific Details](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
+| 52 | [Restaurant Food Delivery Tracker](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker) | [💻 Java](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker/solution.java) | **Polymorphism** | `polymorphism` |
 
 ---
 <sub>Auto-generated by `scripts/update_readme.py` • Synced from HackerRank: [saisrikar_b_2021](https://www.hackerrank.com/profile/saisrikar_b_2021)</sub>
