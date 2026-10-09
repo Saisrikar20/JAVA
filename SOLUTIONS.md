@@ -1,6 +1,6 @@
 # 📑 Complete Java Solutions Catalog
 
-This catalog lists all **52** HackerRank Java practice solutions synced from HackerRank profile [**@saisrikar_b_2021**](https://www.hackerrank.com/profile/saisrikar_b_2021).
+This catalog lists all **53** HackerRank Java practice solutions synced from HackerRank profile [**@saisrikar_b_2021**](https://www.hackerrank.com/profile/saisrikar_b_2021).
 
 [⬅️ Return to README](./README.md)
 
@@ -51,15 +51,16 @@ This catalog lists all **52** HackerRank Java practice solutions synced from Hac
 | 41 | [Shape Volume Calculator in a 3D Design Tool](./hackerrank/medium/abstraction-shape-volume-calculator-in-a-3d-design-tool) | [💻 Java](./hackerrank/medium/abstraction-shape-volume-calculator-in-a-3d-design-tool/solution.java) | **Abstraction** | `abstraction` |
 | 42 | [Vehicle Registration System](./hackerrank/medium/abstraction-vehicle-registration-system) | [💻 Java](./hackerrank/medium/abstraction-vehicle-registration-system/solution.java) | **Abstraction** | `Multilevel Inheritance`, `abstraction` |
 | 43 | [Calculating Daily Profit or Loss Percentage](./hackerrank/medium/decision-making-calculating-daily-profit-or-loss-percentage) | [💻 Java](./hackerrank/medium/decision-making-calculating-daily-profit-or-loss-percentage/solution.java) | **Decision** | `decision` |
-| 44 | [Custom Exception Handling for Age Verification](./hackerrank/medium/exception-handling-custom-exception-handling-for-age-verification) | [💻 Java](./hackerrank/medium/exception-handling-custom-exception-handling-for-age-verification/solution.java) | **Exception** | `exception` |
-| 45 | [Online Quiz Scoring System](./hackerrank/medium/exception-handling-online-quiz-scoring-system) | [💻 Java](./hackerrank/medium/exception-handling-online-quiz-scoring-system/solution.java) | **Exception** | `exception` |
-| 46 | [String Splitter with Exception Handling](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling) | [💻 Java](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling/solution.java) | **Exception** | `exception` |
-| 47 | [Animal Sound Simulator](./hackerrank/medium/polymorphism-animal-sound-simulator) | [💻 Java](./hackerrank/medium/polymorphism-animal-sound-simulator/solution.java) | **Polymorphism** | `polymorphism` |
-| 48 | [Cricket Match Delivery Tracking System](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
-| 49 | [Cricket Match Tracker](./hackerrank/medium/polymorphism-cricket-match-tracker) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-tracker/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
-| 50 | [Cricket Player Information Hub](./hackerrank/medium/polymorphism-cricket-player-information-hub) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-information-hub/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
-| 51 | [Cricket Player Profile with Role-Specific Details](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
-| 52 | [Restaurant Food Delivery Tracker](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker) | [💻 Java](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker/solution.java) | **Polymorphism** | `polymorphism` |
+| 44 | [Bank Account Withdrawal System](./hackerrank/medium/exception-handling-bank-account-withdrawal-system) | [💻 Java](./hackerrank/medium/exception-handling-bank-account-withdrawal-system/solution.java) | **Exception** | `Validation Logic`, `exception` |
+| 45 | [Custom Exception Handling for Age Verification](./hackerrank/medium/exception-handling-custom-exception-handling-for-age-verification) | [💻 Java](./hackerrank/medium/exception-handling-custom-exception-handling-for-age-verification/solution.java) | **Exception** | `exception` |
+| 46 | [Online Quiz Scoring System](./hackerrank/medium/exception-handling-online-quiz-scoring-system) | [💻 Java](./hackerrank/medium/exception-handling-online-quiz-scoring-system/solution.java) | **Exception** | `exception` |
+| 47 | [String Splitter with Exception Handling](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling) | [💻 Java](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling/solution.java) | **Exception** | `exception` |
+| 48 | [Animal Sound Simulator](./hackerrank/medium/polymorphism-animal-sound-simulator) | [💻 Java](./hackerrank/medium/polymorphism-animal-sound-simulator/solution.java) | **Polymorphism** | `polymorphism` |
+| 49 | [Cricket Match Delivery Tracking System](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
+| 50 | [Cricket Match Tracker](./hackerrank/medium/polymorphism-cricket-match-tracker) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-tracker/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
+| 51 | [Cricket Player Information Hub](./hackerrank/medium/polymorphism-cricket-player-information-hub) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-information-hub/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
+| 52 | [Cricket Player Profile with Role-Specific Details](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details/solution.java) | **Polymorphism** | `Domain State Tracking`, `polymorphism` |
+| 53 | [Restaurant Food Delivery Tracker](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker) | [💻 Java](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker/solution.java) | **Polymorphism** | `polymorphism` |
 
 ---
 <sub>Auto-generated by `scripts/update_readme.py` • Synced from HackerRank: [saisrikar_b_2021](https://www.hackerrank.com/profile/saisrikar_b_2021)</sub>
