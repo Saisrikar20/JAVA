@@ -3,7 +3,7 @@
 A curated collection of Java solutions to **HackerRank** challenges, maintained for coursework, interview preparation, and mastery of data structures, algorithms, and object-oriented design.
 
 <!-- BADGES:START -->
-[![HackerRank Profile](https://img.shields.io/badge/HackerRank-saisrikar_b_2021-00EA64?style=for-the-badge&logo=hackerrank&logoColor=white)](https://www.hackerrank.com/profile/saisrikar_b_2021) [![Solved](https://img.shields.io/badge/Solved-54-2563EB?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.hackerrank.com/profile/saisrikar_b_2021) [![Difficulty](https://img.shields.io/badge/Difficulty-Medium-F59E0B?style=for-the-badge)](https://www.hackerrank.com/profile/saisrikar_b_2021) [![Language](https://img.shields.io/badge/Language-Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://github.com/Saisrikar20/JAVA) [![Platform](https://img.shields.io/badge/Platform-HackerRank-00EA64?style=for-the-badge&logo=hackerrank&logoColor=white)](https://www.hackerrank.com/profile/saisrikar_b_2021) [![Views](https://komarev.com/ghpvc/?username=Saisrikar20-JAVA&label=Views&color=0e75b6&style=for-the-badge)](https://github.com/Saisrikar20/JAVA)
+[![HackerRank Profile](https://img.shields.io/badge/HackerRank-saisrikar_b_2021-00EA64?style=for-the-badge&logo=hackerrank&logoColor=white)](https://www.hackerrank.com/profile/saisrikar_b_2021) [![Solved](https://img.shields.io/badge/Solved-55-2563EB?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.hackerrank.com/profile/saisrikar_b_2021) [![Difficulty](https://img.shields.io/badge/Difficulty-Medium-F59E0B?style=for-the-badge)](https://www.hackerrank.com/profile/saisrikar_b_2021) [![Language](https://img.shields.io/badge/Language-Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://github.com/Saisrikar20/JAVA) [![Platform](https://img.shields.io/badge/Platform-HackerRank-00EA64?style=for-the-badge&logo=hackerrank&logoColor=white)](https://www.hackerrank.com/profile/saisrikar_b_2021) [![Views](https://komarev.com/ghpvc/?username=Saisrikar20-JAVA&label=Views&color=0e75b6&style=for-the-badge)](https://github.com/Saisrikar20/JAVA)
 <!-- BADGES:END -->
 
 ---
@@ -24,17 +24,17 @@ This repository automatically tracks and synchronizes my Java programming practi
 <!-- STATS:START -->
 | Category | Solved | Share of Solutions | Key Concepts |
 |:---|:---:|:---|:---|
-| 🔢 **Arrays (1D)** | **2** | `█░░░░░░░░░` 3.7% | Median finding, filtering |
-| 🔢 **Arrays (2D)** | **10** | `██░░░░░░░░` 18.5% | Matrix traversal, rotation, diagonal sums, snake patterns |
-| 🏗️ **Classes & Objects** | **11** | `██░░░░░░░░` 20.4% | Encapsulation, state management, domain modeling |
-| 🧬 **Inheritance** | **6** | `█░░░░░░░░░` 11.1% | Class hierarchies, method overriding, multilevel inheritance |
-| 🔁 **Recursion** | **6** | `█░░░░░░░░░` 11.1% | Divide & conquer, bit counting, validation |
-| 🔤 **Strings** | **3** | `█░░░░░░░░░` 5.6% | Parsing, character frequency, word reversal |
-| 📌 **Abstraction** | **4** | `█░░░░░░░░░` 7.4% | Problem solving |
+| 🔢 **Arrays (1D)** | **2** | `█░░░░░░░░░` 3.6% | Median finding, filtering |
+| 🔢 **Arrays (2D)** | **10** | `██░░░░░░░░` 18.2% | Matrix traversal, rotation, diagonal sums, snake patterns |
+| 🏗️ **Classes & Objects** | **11** | `██░░░░░░░░` 20.0% | Encapsulation, state management, domain modeling |
+| 🧬 **Inheritance** | **6** | `█░░░░░░░░░` 10.9% | Class hierarchies, method overriding, multilevel inheritance |
+| 🔁 **Recursion** | **6** | `█░░░░░░░░░` 10.9% | Divide & conquer, bit counting, validation |
+| 🔤 **Strings** | **3** | `█░░░░░░░░░` 5.5% | Parsing, character frequency, word reversal |
+| 📌 **Abstraction** | **4** | `█░░░░░░░░░` 7.3% | Problem solving |
 | 📌 **Decision** | **1** | `█░░░░░░░░░` 1.8% | Problem solving |
-| 📌 **Exception** | **5** | `█░░░░░░░░░` 9.3% | Problem solving |
-| 📌 **Polymorphism** | **6** | `█░░░░░░░░░` 11.1% | Problem solving |
-| 🎯 **Total** | **54** | `██████████` 100.0% | **All Topics** |
+| 📌 **Exception** | **6** | `█░░░░░░░░░` 10.9% | Problem solving |
+| 📌 **Polymorphism** | **6** | `█░░░░░░░░░` 10.9% | Problem solving |
+| 🎯 **Total** | **55** | `██████████` 100.0% | **All Topics** |
 <!-- STATS:END -->
 
 ---
@@ -154,15 +154,16 @@ The table below is **automatically generated and updated** whenever new solution
 </details>
 
 <details open>
-<summary><b>📌 Exception (5)</b> — <i>Click to expand/collapse</i></summary>
+<summary><b>📌 Exception (6)</b> — <i>Click to expand/collapse</i></summary>
 
 | # | Problem Title | Solution | Key Concepts / Topics |
 |:---:|:---|:---:|:---|
 | 44 | [Bank Account Withdrawal System](./hackerrank/medium/exception-handling-bank-account-withdrawal-system) | [💻 Java](./hackerrank/medium/exception-handling-bank-account-withdrawal-system/solution.java) | `Validation Logic`, `exception` |
 | 45 | [Custom Exception Handling for Age Verification](./hackerrank/medium/exception-handling-custom-exception-handling-for-age-verification) | [💻 Java](./hackerrank/medium/exception-handling-custom-exception-handling-for-age-verification/solution.java) | `exception` |
-| 46 | [Online Quiz Scoring System](./hackerrank/medium/exception-handling-online-quiz-scoring-system) | [💻 Java](./hackerrank/medium/exception-handling-online-quiz-scoring-system/solution.java) | `exception` |
-| 47 | [String Splitter with Exception Handling](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling) | [💻 Java](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling/solution.java) | `exception` |
-| 48 | [Student Grades Lookup System](./hackerrank/medium/exception-handling-student-grades-lookup-system) | [💻 Java](./hackerrank/medium/exception-handling-student-grades-lookup-system/solution.java) | `Class Hierarchies`, `exception` |
+| 46 | [exception-handling-budget-planner-for-monthly-expenses](./hackerrank/medium/exception-handling-budget-planner-for-monthly-expenses) | [💻 Java](./hackerrank/medium/exception-handling-budget-planner-for-monthly-expenses/solution.java) | `exception` |
+| 47 | [Online Quiz Scoring System](./hackerrank/medium/exception-handling-online-quiz-scoring-system) | [💻 Java](./hackerrank/medium/exception-handling-online-quiz-scoring-system/solution.java) | `exception` |
+| 48 | [String Splitter with Exception Handling](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling) | [💻 Java](./hackerrank/medium/exception-handling-string-splitter-with-exception-handling/solution.java) | `exception` |
+| 49 | [Student Grades Lookup System](./hackerrank/medium/exception-handling-student-grades-lookup-system) | [💻 Java](./hackerrank/medium/exception-handling-student-grades-lookup-system/solution.java) | `Class Hierarchies`, `exception` |
 
 </details>
 
@@ -171,12 +172,12 @@ The table below is **automatically generated and updated** whenever new solution
 
 | # | Problem Title | Solution | Key Concepts / Topics |
 |:---:|:---|:---:|:---|
-| 49 | [Animal Sound Simulator](./hackerrank/medium/polymorphism-animal-sound-simulator) | [💻 Java](./hackerrank/medium/polymorphism-animal-sound-simulator/solution.java) | `polymorphism` |
-| 50 | [Cricket Match Delivery Tracking System](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system/solution.java) | `Domain State Tracking`, `polymorphism` |
-| 51 | [Cricket Match Tracker](./hackerrank/medium/polymorphism-cricket-match-tracker) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-tracker/solution.java) | `Domain State Tracking`, `polymorphism` |
-| 52 | [Cricket Player Information Hub](./hackerrank/medium/polymorphism-cricket-player-information-hub) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-information-hub/solution.java) | `Domain State Tracking`, `polymorphism` |
-| 53 | [Cricket Player Profile with Role-Specific Details](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details/solution.java) | `Domain State Tracking`, `polymorphism` |
-| 54 | [Restaurant Food Delivery Tracker](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker) | [💻 Java](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker/solution.java) | `polymorphism` |
+| 50 | [Animal Sound Simulator](./hackerrank/medium/polymorphism-animal-sound-simulator) | [💻 Java](./hackerrank/medium/polymorphism-animal-sound-simulator/solution.java) | `polymorphism` |
+| 51 | [Cricket Match Delivery Tracking System](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-delivery-tracking-system/solution.java) | `Domain State Tracking`, `polymorphism` |
+| 52 | [Cricket Match Tracker](./hackerrank/medium/polymorphism-cricket-match-tracker) | [💻 Java](./hackerrank/medium/polymorphism-cricket-match-tracker/solution.java) | `Domain State Tracking`, `polymorphism` |
+| 53 | [Cricket Player Information Hub](./hackerrank/medium/polymorphism-cricket-player-information-hub) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-information-hub/solution.java) | `Domain State Tracking`, `polymorphism` |
+| 54 | [Cricket Player Profile with Role-Specific Details](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details) | [💻 Java](./hackerrank/medium/polymorphism-cricket-player-profile-with-role-specific-details/solution.java) | `Domain State Tracking`, `polymorphism` |
+| 55 | [Restaurant Food Delivery Tracker](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker) | [💻 Java](./hackerrank/medium/polymorphism-restaurant-food-delivery-tracker/solution.java) | `polymorphism` |
 
 </details>
 
