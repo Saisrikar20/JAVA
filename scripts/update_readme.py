@@ -34,6 +34,11 @@ HACKERRANK_PROFILE_URL = f"https://www.hackerrank.com/profile/{HACKERRANK_USERNA
 GITHUB_REPO_URL = f"https://github.com/{GITHUB_USER}/{REPO_NAME}"
 
 TOPIC_CONFIG: Dict[str, Dict[str, str]] = {
+    "abstraction": {
+        "display": "Abstraction",
+        "icon": "🧩",
+        "key_concepts": "Abstract classes, interface design, method contracts",
+    },
     "arrays-1d": {
         "display": "Arrays (1D)",
         "icon": "🔢",
@@ -49,10 +54,25 @@ TOPIC_CONFIG: Dict[str, Dict[str, str]] = {
         "icon": "🏗️",
         "key_concepts": "Encapsulation, state management, domain modeling",
     },
+    "decision-making": {
+        "display": "Decision Making",
+        "icon": "⚖️",
+        "key_concepts": "Conditional branching, business logic evaluation",
+    },
+    "exception-handling": {
+        "display": "Exception Handling",
+        "icon": "🛡️",
+        "key_concepts": "Try-catch blocks, custom exceptions, validation",
+    },
     "inheritance": {
         "display": "Inheritance",
         "icon": "🧬",
         "key_concepts": "Class hierarchies, method overriding, multilevel inheritance",
+    },
+    "polymorphism": {
+        "display": "Polymorphism",
+        "icon": "🎭",
+        "key_concepts": "Dynamic method dispatch, runtime polymorphism",
     },
     "recursion": {
         "display": "Recursion",
@@ -143,6 +163,30 @@ def detect_problem_concepts(folder_name: str, topic_key: str) -> str:
         tags.append("`Arrangement Validation`")
     if "lines" in f and "sorted" in f:
         tags.append("`Sorted Lines Check`")
+    if "profit" in f or "loss" in f:
+        tags.append("`Profit/Loss Calculation`")
+    if "quiz" in f:
+        tags.append("`Score Calculation`")
+    if "invoice" in f:
+        tags.append("`Safe Calculation`")
+    if "splitter" in f:
+        tags.append("`String Parsing`")
+    if "grade" in f:
+        tags.append("`Record Lookup`")
+    if "budget" in f or "expense" in f:
+        tags.append("`Budget Planning`")
+    if "sound" in f:
+        tags.append("`Simulation`")
+    if "restaurant" in f or "food" in f:
+        tags.append("`Order Tracking`")
+    if "library" in f or "membership" in f:
+        tags.append("`Membership Management`")
+    if "payment" in f:
+        tags.append("`Payment Processing`")
+    if "shape" in f or "volume" in f:
+        tags.append("`3D Volume Calculation`")
+    if "registration" in f:
+        tags.append("`Vehicle Registration`")
 
     cfg = TOPIC_CONFIG.get(topic_key, {})
     tags.append(f"`{cfg.get('display', topic_key)}`")
@@ -193,6 +237,14 @@ def extract_problem_info(folder_path: Path, repo_root: Path) -> Tuple[str, str, 
                         topic_key = "recursion"
                     elif "string" in cat_raw:
                         topic_key = "strings"
+                    elif "abstraction" in cat_raw:
+                        topic_key = "abstraction"
+                    elif "decision" in cat_raw:
+                        topic_key = "decision-making"
+                    elif "exception" in cat_raw:
+                        topic_key = "exception-handling"
+                    elif "polymorphism" in cat_raw:
+                        topic_key = "polymorphism"
 
             diff_match = re.search(r"Difficulty-(Easy|Medium|Hard)", content, re.IGNORECASE)
             if diff_match:
@@ -437,9 +489,12 @@ The table below is **automatically generated and updated** whenever new solution
 
 ## 🧠 Topics & Key Concepts Covered
 
+- **Abstraction & Interfaces:** Contract-driven architecture, abstract classes, and decoupled system design.
 - **Arrays (1D & 2D):** Median finding, filtering, matrix traversal, rotation, diagonal load balances, and robotic snake traversals.
 - **Classes & Objects:** Encapsulation, state management, delivery tracking systems, and domain modeling.
-- **Inheritance & Polymorphism:** Class hierarchies, method overriding, and vehicle/student management systems.
+- **Decision Making:** Conditional control flow, profit/loss analysis, and business rule enforcement.
+- **Exception Handling:** Robust error handling, custom exception hierarchies, and data validation.
+- **Inheritance & Polymorphism:** Class hierarchies, method overriding, dynamic dispatch, and domain trackers.
 - **Recursion:** Divide & conquer, bit counting in device monitoring, recursive power/string calculation, and account number validation.
 - **String Manipulation:** Character frequency counting, word reversal for teleprompters, and sentence complexity analysis.
 
@@ -456,12 +511,16 @@ JAVA/
 │   └── update_readme.py           # Python script that counts solutions and syncs README.md
 ├── hackerrank/
 │   └── medium/
-│       ├── arrays-1d-*/           # 1D Array problems
-│       ├── arrays-2d-*/           # 2D Array / Matrix problems
-│       ├── class-and-objects-*/   # OOP & encapsulation problems
-│       ├── inheritance-*/         # Inheritance & polymorphism problems
-│       ├── recursion-*/           # Recursive algorithm problems
-│       └── strings-*/             # String manipulation problems
+│       ├── abstraction-*/         # Abstract classes & contract design
+│       ├── arrays-1d-*/           # 1D Array problems & algorithms
+│       ├── arrays-2d-*/           # 2D Matrix traversal & manipulation
+│       ├── class-and-objects-*/   # OOP encapsulation & state management
+│       ├── decision-making-*/     # Conditional logic & business rules
+│       ├── exception-handling-*/  # Custom exceptions & robust error handling
+│       ├── inheritance-*/         # Class hierarchies & multilevel inheritance
+│       ├── polymorphism-*/        # Dynamic dispatch & method overriding
+│       ├── recursion-*/           # Recursive algorithms & validation
+│       └── strings-*/             # String parsing & frequency analysis
 ├── SOLUTIONS.md                   # Comprehensive flat solutions catalog
 └── README.md                      # Repository overview, dynamic stats, and problem index
 ```
