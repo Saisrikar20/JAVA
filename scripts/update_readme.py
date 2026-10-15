@@ -34,35 +34,40 @@ HACKERRANK_PROFILE_URL = f"https://www.hackerrank.com/profile/{HACKERRANK_USERNA
 GITHUB_REPO_URL = f"https://github.com/{GITHUB_USER}/{REPO_NAME}"
 
 TOPIC_CONFIG: Dict[str, Dict[str, str]] = {
-    "abstraction": {
-        "display": "Abstraction",
-        "icon": "🧩",
-        "key_concepts": "Abstract classes, interface design, method contracts",
-    },
     "arrays-1d": {
         "display": "Arrays (1D)",
         "icon": "🔢",
-        "key_concepts": "Median finding, filtering",
+        "key_concepts": "Median finding, element filtering, 1D array operations",
     },
     "arrays-2d": {
         "display": "Arrays (2D)",
         "icon": "🔢",
         "key_concepts": "Matrix traversal, rotation, diagonal sums, snake patterns",
     },
-    "class-and-objects": {
-        "display": "Classes & Objects",
-        "icon": "🏗️",
-        "key_concepts": "Encapsulation, state management, domain modeling",
+    "strings": {
+        "display": "Strings",
+        "icon": "🔤",
+        "key_concepts": "Text parsing, character frequency, word reversal, complexity",
+    },
+    "recursion": {
+        "display": "Recursion",
+        "icon": "🔁",
+        "key_concepts": "Divide & conquer, bit counting, power calculation, validation",
     },
     "decision-making": {
         "display": "Decision Making",
         "icon": "⚖️",
-        "key_concepts": "Conditional branching, business logic evaluation",
+        "key_concepts": "Conditional branching, business logic, profit/loss analysis",
     },
-    "exception-handling": {
-        "display": "Exception Handling",
-        "icon": "🛡️",
-        "key_concepts": "Try-catch blocks, custom exceptions, validation",
+    "class-and-objects": {
+        "display": "Classes & Objects",
+        "icon": "🏗️",
+        "key_concepts": "Encapsulation, instance state, domain modeling, tracking systems",
+    },
+    "encapsulation": {
+        "display": "Encapsulation",
+        "icon": "🔒",
+        "key_concepts": "Data hiding, getters & setters, state validation, player/venue trackers",
     },
     "inheritance": {
         "display": "Inheritance",
@@ -72,17 +77,22 @@ TOPIC_CONFIG: Dict[str, Dict[str, str]] = {
     "polymorphism": {
         "display": "Polymorphism",
         "icon": "🎭",
-        "key_concepts": "Dynamic method dispatch, runtime polymorphism",
+        "key_concepts": "Dynamic method dispatch, runtime polymorphism, simulation",
     },
-    "recursion": {
-        "display": "Recursion",
-        "icon": "🔁",
-        "key_concepts": "Divide & conquer, bit counting, validation",
+    "abstraction": {
+        "display": "Abstraction",
+        "icon": "🧩",
+        "key_concepts": "Abstract classes, interface design, method contracts",
     },
-    "strings": {
-        "display": "Strings",
-        "icon": "🔤",
-        "key_concepts": "Parsing, character frequency, word reversal",
+    "interface": {
+        "display": "Interfaces",
+        "icon": "🔌",
+        "key_concepts": "Contract implementation, multiple inheritance, loose coupling",
+    },
+    "exception-handling": {
+        "display": "Exception Handling",
+        "icon": "🛡️",
+        "key_concepts": "Try-catch blocks, custom exceptions, safe calculations, validation",
     },
 }
 
@@ -187,6 +197,14 @@ def detect_problem_concepts(folder_name: str, topic_key: str) -> str:
         tags.append("`3D Volume Calculation`")
     if "registration" in f:
         tags.append("`Vehicle Registration`")
+    if "bank" in f:
+        tags.append("`Banking Operations`")
+    if "innings" in f:
+        tags.append("`Innings Management`")
+    if "smart" in f or "home" in f:
+        tags.append("`Home Automation`")
+    if "analytics" in f:
+        tags.append("`Sports Analytics`")
 
     cfg = TOPIC_CONFIG.get(topic_key, {})
     tags.append(f"`{cfg.get('display', topic_key)}`")
@@ -245,6 +263,10 @@ def extract_problem_info(folder_path: Path, repo_root: Path) -> Tuple[str, str, 
                         topic_key = "exception-handling"
                     elif "polymorphism" in cat_raw:
                         topic_key = "polymorphism"
+                    elif "encapsulation" in cat_raw:
+                        topic_key = "encapsulation"
+                    elif "interface" in cat_raw:
+                        topic_key = "interface"
 
             diff_match = re.search(r"Difficulty-(Easy|Medium|Hard)", content, re.IGNORECASE)
             if diff_match:
@@ -256,6 +278,8 @@ def extract_problem_info(folder_path: Path, repo_root: Path) -> Tuple[str, str, 
         title = "Character Count"
     if folder_name == "arrays-2d-power-grid-monitoring-computing-diagonal-load-balances":
         title = "Power Grid Monitoring — Computing Diagonal Load Balances"
+    if title.endswith("IntInt"):
+        title = title[:-6].strip()
 
     if not topic_key:
         parts = folder_name.split("-")
@@ -489,14 +513,17 @@ The table below is **automatically generated and updated** whenever new solution
 
 ## 🧠 Topics & Key Concepts Covered
 
-- **Abstraction & Interfaces:** Contract-driven architecture, abstract classes, and decoupled system design.
 - **Arrays (1D & 2D):** Median finding, filtering, matrix traversal, rotation, diagonal load balances, and robotic snake traversals.
-- **Classes & Objects:** Encapsulation, state management, delivery tracking systems, and domain modeling.
-- **Decision Making:** Conditional control flow, profit/loss analysis, and business rule enforcement.
-- **Exception Handling:** Robust error handling, custom exception hierarchies, and data validation.
-- **Inheritance & Polymorphism:** Class hierarchies, method overriding, dynamic dispatch, and domain trackers.
+- **Strings:** Text parsing, character frequency counting, word reversal for teleprompters, and sentence complexity analysis.
 - **Recursion:** Divide & conquer, bit counting in device monitoring, recursive power/string calculation, and account number validation.
-- **String Manipulation:** Character frequency counting, word reversal for teleprompters, and sentence complexity analysis.
+- **Decision Making:** Conditional control flow, profit/loss analysis, and business rule enforcement.
+- **Classes & Objects:** Domain modeling, state management, delivery tracking systems, and object lifecycle.
+- **Encapsulation:** Data hiding, access modifiers, getter/setter validation, and domain state integrity.
+- **Inheritance:** Class hierarchies, method overriding, code reuse, and multilevel inheritance systems.
+- **Polymorphism:** Runtime polymorphism, dynamic method dispatch, and interface-driven tracking simulations.
+- **Abstraction:** Contract-driven architecture, abstract classes, and decoupled library & banking systems.
+- **Interfaces:** Loose coupling, multiple inheritance of type, and modular analytics contracts.
+- **Exception Handling:** Robust error handling, custom exception hierarchies, and safe transaction validation.
 
 ---
 
@@ -511,16 +538,18 @@ JAVA/
 │   └── update_readme.py           # Python script that counts solutions and syncs README.md
 ├── hackerrank/
 │   └── medium/
-│       ├── abstraction-*/         # Abstract classes & contract design
 │       ├── arrays-1d-*/           # 1D Array problems & algorithms
 │       ├── arrays-2d-*/           # 2D Matrix traversal & manipulation
-│       ├── class-and-objects-*/   # OOP encapsulation & state management
+│       ├── strings-*/             # String parsing & frequency analysis
+│       ├── recursion-*/           # Recursive algorithms & validation
 │       ├── decision-making-*/     # Conditional logic & business rules
-│       ├── exception-handling-*/  # Custom exceptions & robust error handling
+│       ├── class-and-objects-*/   # OOP encapsulation & state management
+│       ├── encapsulation-*/       # Data hiding & state protection
 │       ├── inheritance-*/         # Class hierarchies & multilevel inheritance
 │       ├── polymorphism-*/        # Dynamic dispatch & method overriding
-│       ├── recursion-*/           # Recursive algorithms & validation
-│       └── strings-*/             # String parsing & frequency analysis
+│       ├── abstraction-*/         # Abstract classes & contract design
+│       ├── interface-*/           # Interface contracts & loose coupling
+│       └── exception-handling-*/  # Custom exceptions & robust error handling
 ├── SOLUTIONS.md                   # Comprehensive flat solutions catalog
 └── README.md                      # Repository overview, dynamic stats, and problem index
 ```
