@@ -1,6 +1,6 @@
 # 📑 Complete Java Solutions Catalog
 
-This catalog lists all **73** HackerRank Java practice solutions synced from HackerRank profile [**@saisrikar_b_2021**](https://www.hackerrank.com/profile/saisrikar_b_2021).
+This catalog lists all **74** HackerRank Java practice solutions synced from HackerRank profile [**@saisrikar_b_2021**](https://www.hackerrank.com/profile/saisrikar_b_2021).
 
 [⬅️ Return to README](./README.md)
 
@@ -73,14 +73,15 @@ This catalog lists all **73** HackerRank Java practice solutions synced from Hac
 | 63 | [Cricket Player Profile and Performance Tracker](./hackerrank/medium/encapsulation-cricket-player-profile-and-performance-tracker) | [💻 Java](./hackerrank/medium/encapsulation-cricket-player-profile-and-performance-tracker/solution.java) | **Encapsulation** | `Domain State Tracking`, `encapsulation` |
 | 64 | [Cricket Player Profile Management](./hackerrank/medium/encapsulation-cricket-player-profile-management) | [💻 Java](./hackerrank/medium/encapsulation-cricket-player-profile-management/solution.java) | **Encapsulation** | `Domain State Tracking`, `encapsulation` |
 | 65 | [Cricket Player Statistics Management](./hackerrank/medium/encapsulation-cricket-player-statistics-management) | [💻 Java](./hackerrank/medium/encapsulation-cricket-player-statistics-management/solution.java) | **Encapsulation** | `Domain State Tracking`, `encapsulation` |
-| 66 | [Cricket Venue Manager](./hackerrank/medium/encapsulation-cricket-venue-manager) | [💻 Java](./hackerrank/medium/encapsulation-cricket-venue-manager/solution.java) | **Encapsulation** | `Domain State Tracking`, `Venue Information`, `encapsulation` |
-| 67 | [Library Book Organizer](./hackerrank/medium/encapsulation-library-book-organizer) | [💻 Java](./hackerrank/medium/encapsulation-library-book-organizer/solution.java) | **Encapsulation** | `Membership Management`, `encapsulation` |
-| 68 | [Animal Echoes](./hackerrank/medium/interface-animal-echoes) | [💻 Java](./hackerrank/medium/interface-animal-echoes/solution.java) | **Interface** | `interface` |
-| 69 | [Player Management System for Sports AnalyticsIntInt](./hackerrank/medium/interface-player-management-system-for-sports-analyticsintint) | [💻 Java](./hackerrank/medium/interface-player-management-system-for-sports-analyticsintint/solution.java) | **Interface** | `OOP State Tracking`, `interface` |
-| 70 | [Player Statistics Management System](./hackerrank/medium/interface-player-statistics-management-system) | [💻 Java](./hackerrank/medium/interface-player-statistics-management-system/solution.java) | **Interface** | `OOP State Tracking`, `interface` |
-| 71 | [Smart Home System](./hackerrank/medium/interface-smart-home-system) | [💻 Java](./hackerrank/medium/interface-smart-home-system/solution.java) | **Interface** | `interface` |
-| 72 | [University Management System](./hackerrank/medium/interface-university-management-system) | [💻 Java](./hackerrank/medium/interface-university-management-system/solution.java) | **Interface** | `Class Hierarchies`, `interface` |
-| 73 | [Vehicle Control System](./hackerrank/medium/interface-vehicle-control-system) | [💻 Java](./hackerrank/medium/interface-vehicle-control-system/solution.java) | **Interface** | `Multilevel Inheritance`, `interface` |
+| 66 | [Cricket Venue Management](./hackerrank/medium/encapsulation-cricket-venue-management) | [💻 Java](./hackerrank/medium/encapsulation-cricket-venue-management/solution.java) | **Encapsulation** | `Domain State Tracking`, `Venue Information`, `encapsulation` |
+| 67 | [Cricket Venue Manager](./hackerrank/medium/encapsulation-cricket-venue-manager) | [💻 Java](./hackerrank/medium/encapsulation-cricket-venue-manager/solution.java) | **Encapsulation** | `Domain State Tracking`, `Venue Information`, `encapsulation` |
+| 68 | [Library Book Organizer](./hackerrank/medium/encapsulation-library-book-organizer) | [💻 Java](./hackerrank/medium/encapsulation-library-book-organizer/solution.java) | **Encapsulation** | `Membership Management`, `encapsulation` |
+| 69 | [Animal Echoes](./hackerrank/medium/interface-animal-echoes) | [💻 Java](./hackerrank/medium/interface-animal-echoes/solution.java) | **Interface** | `interface` |
+| 70 | [Player Management System for Sports AnalyticsIntInt](./hackerrank/medium/interface-player-management-system-for-sports-analyticsintint) | [💻 Java](./hackerrank/medium/interface-player-management-system-for-sports-analyticsintint/solution.java) | **Interface** | `OOP State Tracking`, `interface` |
+| 71 | [Player Statistics Management System](./hackerrank/medium/interface-player-statistics-management-system) | [💻 Java](./hackerrank/medium/interface-player-statistics-management-system/solution.java) | **Interface** | `OOP State Tracking`, `interface` |
+| 72 | [Smart Home System](./hackerrank/medium/interface-smart-home-system) | [💻 Java](./hackerrank/medium/interface-smart-home-system/solution.java) | **Interface** | `interface` |
+| 73 | [University Management System](./hackerrank/medium/interface-university-management-system) | [💻 Java](./hackerrank/medium/interface-university-management-system/solution.java) | **Interface** | `Class Hierarchies`, `interface` |
+| 74 | [Vehicle Control System](./hackerrank/medium/interface-vehicle-control-system) | [💻 Java](./hackerrank/medium/interface-vehicle-control-system/solution.java) | **Interface** | `Multilevel Inheritance`, `interface` |
 
 ---
 <sub>Auto-generated by `scripts/update_readme.py` • Synced from HackerRank: [saisrikar_b_2021](https://www.hackerrank.com/profile/saisrikar_b_2021)</sub>
