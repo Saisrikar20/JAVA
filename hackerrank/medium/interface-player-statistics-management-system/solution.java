@@ -20,6 +20,7 @@ class Player implements IPlayerStatistics {
         this.noOfWicketsTaken = noOfWicketsTaken;
     }
 
+    @Override
     public void displayPlayerStatistics() {
         System.out.println("Player Details:");
         System.out.println("Player name: " + name);
@@ -50,7 +51,8 @@ public class Solution {
         int noOfWicketsTaken = sc.nextInt();
 
         Player player = new Player(
-            name, teamName, noOfMatches, totalRunsScored, noOfWicketsTaken
+            name, teamName, noOfMatches,
+            totalRunsScored, noOfWicketsTaken
         );
 
         player.displayPlayerStatistics();
