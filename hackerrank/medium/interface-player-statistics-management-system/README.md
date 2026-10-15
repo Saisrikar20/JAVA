@@ -94,7 +94,7 @@ No of wickets taken: 0
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-15T15:28:47.191Z  
+**Submitted:** 2026-10-15T15:30:45.904Z  
 
 ```java
 import java.util.*;
@@ -119,6 +119,7 @@ class Player implements IPlayerStatistics {
         this.noOfWicketsTaken = noOfWicketsTaken;
     }
 
+    @Override
     public void displayPlayerStatistics() {
         System.out.println("Player Details:");
         System.out.println("Player name: " + name);
@@ -149,7 +150,8 @@ public class Solution {
         int noOfWicketsTaken = sc.nextInt();
 
         Player player = new Player(
-            name, teamName, noOfMatches, totalRunsScored, noOfWicketsTaken
+            name, teamName, noOfMatches,
+            totalRunsScored, noOfWicketsTaken
         );
 
         player.displayPlayerStatistics();
