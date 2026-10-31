@@ -331,6 +331,7 @@ def generate_badges(total: int) -> str:
         f"[![Difficulty](https://img.shields.io/badge/Difficulty-Medium-F59E0B?style=for-the-badge)]({HACKERRANK_PROFILE_URL})",
         f"[![Language](https://img.shields.io/badge/Language-Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)]({GITHUB_REPO_URL})",
         f"[![Platform](https://img.shields.io/badge/Platform-HackerRank-00EA64?style=for-the-badge&logo=hackerrank&logoColor=white)]({HACKERRANK_PROFILE_URL})",
+        f"[![Compendium PDF](https://img.shields.io/badge/Compendium-PDF_Download-FF5722?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./HackerRank_Java_Solutions_Compendium.pdf)",
         f"[![Views](https://komarev.com/ghpvc/?username={GITHUB_USER}-{REPO_NAME}&label=Views&color=0e75b6&style=for-the-badge)]({GITHUB_REPO_URL})",
     ]
     return " ".join(lines)
@@ -550,6 +551,7 @@ JAVA/
 │       ├── abstraction-*/         # Abstract classes & contract design
 │       ├── interface-*/           # Interface contracts & loose coupling
 │       └── exception-handling-*/  # Custom exceptions & robust error handling
+├── HackerRank_Java_Solutions_Compendium.pdf # Complete 249-page PDF with questions & solutions
 ├── SOLUTIONS.md                   # Comprehensive flat solutions catalog
 └── README.md                      # Repository overview, dynamic stats, and problem index
 ```
