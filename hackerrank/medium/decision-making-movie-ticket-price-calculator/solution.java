@@ -16,9 +16,6 @@ public class Solution {
         System.out.print("$2.00");
         else
         System.out.print("$2.00");
-        
-        
-        
-        
+        sc.close();
     }    
 }
