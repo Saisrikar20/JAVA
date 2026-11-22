@@ -70,7 +70,7 @@ The customer is 19 years old, classifying them as an adult. The chosen show timi
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-22T06:17:30.388Z  
+**Submitted:** 2026-11-22T06:17:52.180Z  
 
 ```java
 import java.io.*;
@@ -91,10 +91,7 @@ public class Solution {
         System.out.print("$2.00");
         else
         System.out.print("$2.00");
-        
-        
-        
-        
+        sc.close();
     }    
 }
 
